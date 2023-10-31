@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>usercreation</title>
+        <link rel="stylesheet" href="{% static 'ap/normaluser.css '%}">
+    </head>
+    <body>
+        <div id="header">
+            <div id="logo">
+
+                <img src="logo.jpeg"  class="img">
+            </div>
+            <div id="links">
+            <a href="{% url 'userdetails' %}">users</a>
+            <a href="{% url 'movielist' %}">movielist</a>
+            <a href="{% url 'normaluser' %}">normaluser</a>
+            <a href="{% url 'signout' %}">signout</a>
+            </div>
+        </div>
+        <div class="form">
+            <h2 align="center"> usercreation</h2><hr>
+            <form action="{% url 'normaluser' %}" method="post" align="center">
+                {% csrf_token %}
+                Username:<input type="text" placeholder="Enter Username" required name="username"><br><br>
+                Password:<input type="password" placeholder="Enter password" required name="pass"><br><br>
+                Firstname:<input type="text" placeholder="Enter first name" required name="fname"><br><br>
+                Email:<input type="email" placeholder="Enter Email" required name="email"><br><br>
+                Secondname:<input type="text" placeholder="Enter second name" required name="sname"><br><br>
+                City:<input type="text" placeholder="Enter city " required name="city" value="Tirupathi"><br><br>
+                <input type="submit">
+            </form>
+            <br>
+            </div>
+            
+        </body>
+    </html>

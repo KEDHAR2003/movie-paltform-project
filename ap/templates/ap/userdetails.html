@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Userdetails</title>
+        <link rel="stylesheet" href="{% static 'ap/userdetails.css' %}">
+    </head>
+    <body>
+        <div id="header">
+            <div>
+                    <img src="logo.jpeg"  class="img">
+            </div>
+            <div id="links">
+                <a href="{% url 'movielist' %}" class="link">movielist</a>
+                <a href="{% url 'userdetails'%}" class="link">userdetails</a>
+                <a href="{% url 'normaluser' %}" class="link">normaluser</a>
+                <a href="{% url 'signout' %}" class="link">signout</a>
+                </div>
+        </div>
+        
+        <h1>Welcome {{request.user.username}}</h1>
+        <h2>User details</h2>
+        <table >
+            <th>first name</th>
+            <th>second name</th>
+            <th>Email</th>
+            <th>Delete</th>
+            <th>Update</th>
+            {% for i in uder %}
+                <tr>
+                    <td>{{i.firstname}}</td>
+                    <td>{{i.secondname}}</td>
+                    <td>{{i.email}}</td>
+                    
+                    <td ><button id="del"><a href="{% url 'delete' i.firstname %}" id="link">Delete</a></button></td>
+                    <td ><button id="up"><a href="{% url 'update' i.secondname %}" id="link">Update</a></button></td>
+                </tr>
+            {% endfor %}
+           
+
+        </table>
+
+    </body>
+</html>

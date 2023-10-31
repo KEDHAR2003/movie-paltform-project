@@ -1,0 +1,74 @@
+body{
+    margin: 20px 20px;
+    background-image: url('https://i.pinimg.com/originals/96/4f/68/964f6851a6fd6b6c87fd01ef8176d6c8.jpg');
+}
+.logo{
+    height: 75px;
+    width: 75px;
+    margin-left: 15px;
+}
+
+#header{
+    padding: 5px;
+    width: 100%;
+    margin-top: 0px;
+    background-color: aqua;
+    display:flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 75px;
+    
+    
+}
+
+#links{
+    margin-top: 25px;
+    margin-right: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+a{
+    text-decoration: none;
+    color:rgb(20, 19, 21);
+    font-size: 17.5px;
+    font-family: sans-serif;
+
+}
+
+#description{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border:5px;
+    height: 200px;
+    color: whitesmoke;
+}
+
+h2{
+    width: 75%;
+    margin-left: 35px;
+    margin-top: 50px;
+}
+
+h4{
+    font-family: sans-serif;
+    font-size: 18.5px;
+}
+#tv{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border: 5px;
+    height: 200px;
+    color: whitesmoke;
+}
+#download{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border: 5px;
+    height: 200px;
+    color: whitesmoke;
+}

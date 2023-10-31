@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{{movie.title}}</title>
+        <link href="{% static 'ap/moviedetails.css' %}" rel="stylesheet">
+      </head>
+    <body>
+        <div id="all">
+            <div id="photo">
+                <img src="{{movie.image}}">
+            </div>
+            <div id="details">
+                <h1>{{movie.title}}</h1>
+                <hr>
+                <h2>Cast:</h2>
+                <h3>{{movie.cast}}</h3>
+                <h2>Description:</h2>
+                <h3>{{movie.description}}</h3>
+            </div>
+        </div>
+        <div id="extra">
+            <a href="{% url 'play' movie.id %}"><h3>Paly Movie </h3></a>
+            <a href="#"><h3>Download</h3></a>
+            
+        </div>
+    </body>
+</html>

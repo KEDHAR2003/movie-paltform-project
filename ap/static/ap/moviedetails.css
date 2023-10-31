@@ -1,0 +1,33 @@
+body{
+    background-image: url('https://cdn.wallpapersafari.com/49/90/piUcJ3.jpg');
+}
+.logo{
+    height: 50px;
+    width: 50px;
+    margin: auto;
+}
+
+
+#all{
+    display: flex;
+    justify-content: space-between;
+}
+#photo{
+    width: 90%;
+}
+img{
+    margin-top: 15%;
+    margin-left: 5%;
+    
+    width: 400px;
+    height: 400px;
+
+}
+
+#details{
+    height: 100%;
+    font-family: sans-serif;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
+    font-style: italic;
+}

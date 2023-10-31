@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <title>HOME</title>
+        <link rel="stylesheet" href="{% static 'ap/home.css' %}">
+        
+    </head>
+    <body>
+        <div id="header">
+            <div id="logo">
+                <img src="logo.jpeg" class="logo">
+            </div>            <div id="logout">
+                <div class="dropdown">
+                    <button class="dropbtn">language
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                      <a href="{% url 'language' 'te' %}">Telugu</a>
+                      <a href="{% url 'language' 'en' %}">English</a>
+                      <a href="{% url 'language' 'hn' %}">Hindi</a>
+                      <a href="{% url 'language' 'ka' %}">kanada</a>
+                      <a href="{% url 'language' 'ta' %}">Tamil</a>
+                    </div>
+                  </div><div class="dropdown">
+                    <button class="dropbtn">category
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                      <a href="{% url 'category' 'ac' %}">Action</a>
+                      <a href="{% url 'category' 'rc' %}">Romance</a>
+                      <a href="{% url 'category' 'co' %}">comedy</a>
+                      <a href="{% url 'category' 'hr' %}">Horror</a>
+                      <a href="{% url 'category' 'ad' %}">adventure</a>
+                      <a href="{% url 'category' 'ms' %}">Mystery</a>
+                      <a href="{% url 'category' 'th' %}">Thriller</a>
+                    </div>
+                  </div> 
+                <div class="logout">
+                <a href="{% url 'signout' %}" >signout</a>
+            </div>
+            </div>
+        </div>
+        <h3>English</h3> 
+        <div id="card1">   
+            
+
+            {% for i in movie %}
+                {% if i.language == "en" %}
+                    <div id="card">
+                    <a href="{% url 'moviedetails' i.id %}"><img src="{{i.image}}"></a>
+                    <a href="{% url 'moviedetails' i.id %}" id="title">{{i.title}}</a>
+                   </div>
+                    
+                {% endif %}
+
+            {% endfor %}
+
+        </div>
+        <h3>Telugu</h3> 
+        <div id="card1">   
+            
+
+            {% for i in movie %}
+                {% if i.language == "te" %}
+                    <div id="card">
+                    <a href="{% url 'moviedetails' i.id %}"><img src="{{i.image}}"></a>
+                    <a href="{% url 'moviedetails' i.id %}" id="title">{{i.title}}</a>
+                   </div>
+                    
+                {% endif %}
+
+            {% endfor %}
+
+        </div>
+    </body>
+</html>

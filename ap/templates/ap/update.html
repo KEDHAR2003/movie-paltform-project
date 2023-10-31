@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Userupdate</title>
+        <link rel="stylesheet" href="#">
+
+    </head>
+    <body>
+        <div id="header">
+            <div>
+            <h1>
+                TENFLIX
+            </h1>
+            </div>
+            <div id="links">
+                <a href="{% url 'userdetails' %}">userdetails</a>
+                <a href="{% url 'movielist' %}">MOVIELIST</a>
+                
+                <a href="{% url 'normaluser' %}">normaluser</a>
+                <a href="{% url 'signout' %}">signout</a>
+            </div>
+        </div>
+        <form align="center" method="post" action="{% url 'upuser' men.secondname %}">
+            {% csrf_token %}
+            username:<input type="text" value="{{men1.username}}" name="username"><br><br>
+            firstname:<input type="text" value="{{men.firstname}}" name="firstname"><br><br>
+            secondname:<input type="text" value="{{men.secondname}}" name="secondname"><br><br>
+            email:<input type="email" value="{{men.email}}" name="email"><br><br>
+            city:<input type="text" value="{{men.city}}" name="city"><br><br>
+            <div class="op">
+                <button type="submit">Update</button>
+                <button><a href="{% url 'userdetails' %}">cancel</a></button>
+            </div>
+        </form>
+
+    </body>
+</html>

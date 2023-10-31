@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="{% static 'ap/signin.css' %}" >
+    </head>
+    <body>
+        <div id="header">
+            <div id="logo">
+                <img src="logo.jpeg" class="logo">
+            </div>
+            <div id="links">
+            <a href="{% url 'signin' %}">signin</a>
+            <a href="{% url 'signup' %}">signup</a>
+            </div>
+        </div>
+        <div class="form">
+        <h2 align="center">Login</h2><hr>
+        {% if message %}
+        <div>{{message}}</div>
+        {% endif %}
+        <form action="{% url 'signin' %}" method="post" align="center">
+            {% csrf_token %}
+            username:<input type="text" required name="username"><br><br>
+            password:<input type="password" name="password" required><br><br>
+            <input type="submit">
+        </form>
+        </div>
+        
+    </body>
+</html>

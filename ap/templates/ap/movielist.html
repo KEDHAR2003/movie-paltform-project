@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>movielist</title>
+        <link rel="stylesheet" href="{% static 'ap/movielist.css' %}"
+    </head>
+    <body>
+        <div id="header">
+            <div>
+                
+                <img src="logo.jpeg"  class="img">
+            </div>
+            <div id="links">
+            <a href="{% url 'movielist' %}" class="link">movielist</a>
+            <a href="{% url 'userdetails'%}" class="link">userdetails</a>
+            <a href="{% url 'normaluser' %}" class="link">normaluser</a>
+            <a href="{% url 'signout' %}" class="link">signout</a>
+            </div>
+        </div>
+        <h1>Welcome {{request.user.username}}</h1>
+        <h2>Movie details</h2>
+        <table>
+            <th>movie name</th>
+            <th>language</th>
+            <th>category</th>
+            <th>Delete</th>
+            {% for i in movie %}
+                <tr>
+                    <td>{{i.title}}</td>
+                    <td>{{i.language}}</td>
+                    <td>{{i.category}}</td>
+                    <td ><button id="del"><a href="{% url 'mdelete' i.id %}" id="link">Delete</a></button></td>
+                </tr>
+            {% endfor %}
+           
+
+        </table>
+        
+   
+    <div id="language">
+    <h4>language</h4>
+    <h5>te=telugu</h5>
+    <h5>ka=kanada</h5>
+    <h5>en=english</h5>
+    <h5>ta=tamil</h5>
+    <h5>al=all</h5>
+    <h5>hn=hindi</h5>
+    </div>
+    <div class="category">
+        <h4>category</h4>
+        <h5>ac=action</h5>
+        <h5>rc=romance</h5>
+        <h5>co=comoedy</h5>
+        <h5>ho=horror</h5>
+        <h5>ad=adventure</h5>
+        <h5>ms=mystery</h5>
+        <h5>th=thriller</h5>
+    </div>
+
+    </body>
+</html>

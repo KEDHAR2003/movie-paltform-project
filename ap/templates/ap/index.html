@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>tenflix</title>
+        <link rel="stylesheet" href="{% static 'ap/index.css' %}">
+    </head>
+    <body>
+        <div id="header">
+            <div id="logo">
+                    <img src="logo.jpeg" class="logo">
+            </div>
+            <div id="links">
+                <a href="{% url 'signin' %}">signup/signin</a>
+            </div>
+        </div>
+         {% if message %}
+          <div>{{message}}</div>
+        {% endif %}  
+         <div id="description">
+            <h2>Description</h2>
+            <h4>Tenflix is streaming service that allows our members to watch TV shows and movies on an internet-connected device. Depending on your plan, you can also download TV shows and movies to your iOS, Android, or Windows 10 device and watch without an internet connection.</h4>
+        </div>
+        <div id="tv">
+            <h2>Enjoy on your TV.</h2>
+            <h4>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</h4>
+        </div>
+        <div id="download">
+            <h2>Download your shows to watch offline.</h2>
+            <h4>Save your favourites easily and always have something to watch.</h4>
+        </div>
+    </body>
+</html>
